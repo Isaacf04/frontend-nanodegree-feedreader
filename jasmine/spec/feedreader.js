@@ -96,11 +96,16 @@ $(function() {
         beforeEach(function(done) {
         //The lines inside here will run before each of our tests contained within this suite
             loadFeed(0, function() {
+            //Done now signals to the framework that our asychronous function is done
                 done();
             });
    
         });
 
+        it('Within the feed container there is a minimum of 1 entry', function() {
+            var entryNum = $('.entry').length;
+            expect(entryNum).not.toBeLessThan(1);
+        });
     // Write a new test suite named "New Feed Selection"
     //describe('New Feed Selection', function() {
 
