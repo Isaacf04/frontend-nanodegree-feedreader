@@ -93,15 +93,18 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
          //Use the beforeEach function for this asychronous code
-        beforeEach(function() {
+        beforeEach(function(done) {
         //The lines inside here will run before each of our tests contained within this suite
-
-        })
+            loadFeed(0, function() {
+                done();
+            });
+   
+        });
 
     // Write a new test suite named "New Feed Selection"
-    describe('New Feed Selection', function() {
-        
-    })
+    //describe('New Feed Selection', function() {
+
+    //})
 
 
         /* TODO: Write a test that ensures when a new feed is loaded
