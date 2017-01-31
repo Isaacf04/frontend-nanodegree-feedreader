@@ -105,6 +105,29 @@ $(function() {
 
     })
 
+    //Write a test suite named "New Feed Selection".
+
+    describe('New Feed Selection', function() {
+        var firstNewFeed = $('.feed').html();
+
+/*Write a test that ensures when a new feed is loaded by the 
+//loadFeed function that the content actually changes.
+*/
+
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                done();
+            })
+        })
+
+        it('Feed content has changed', function(done) {
+            secondNewFeed = $('.feed').html();
+            expect(secondNewFeed).not.toBe(firstNewFeed);
+            done();
+        })
+
+
+    })
 
 
 }());
