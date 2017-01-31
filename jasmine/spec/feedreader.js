@@ -95,8 +95,7 @@ $(function() {
 
         it('Within the feed container there is a minimum of 1 entry', function() {
             var entryNum = $('.feed .entry').length;
-            expect(entryNum).not.toBeGreaterThan(0);
-            done();
+            expect(entryNum).toBeGreaterThan(0);
         })
 
     })
