@@ -7,7 +7,8 @@ A web-based application that reads RSS feeds. Testing this app using the framewo
 Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
 ## How to run this test:
-Visit [this](https://madisonkanna.github.io/frontend-nanodegree-feedreader/) link
+Visit [this](https://madisonkanna.github.io/frontend-nanodegree-feedreader/) link. 
+
 To view locally, clone this repo to your desktop and open index.html in your browser
 
 ## The Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
