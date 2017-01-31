@@ -4,6 +4,7 @@ A web-based application that reads RSS feeds. Testing this app using the framewo
 
 ## References
 [Jasmine Documentation](https://jasmine.github.io/2.0/introduction.html)
+
 Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/projects/3442558598/rubric)
 
 ## How to run this test:
