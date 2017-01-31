@@ -100,36 +100,13 @@ $(function() {
          */
 
         it('Within the feed container there is a minimum of 1 entry', function() {
-            var entryNum = $('.entry').length;
+            var entryNum = $('.feed .entry').length;
             expect(entryNum).toBeGreaterThan(0);
         })
 
     })
 
-    // TODO: Write a new test suite named "New Feed Selection"
-    describe('New Feed Selection', function() {
-        var firstNewFeed = $('.feed').html();
 
-        beforeEach(function(done) {
-            firstNewFeed = $('.feed').html();
-            loadFeed(0, function() {
-                done();
-            })
-        })
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
-
-        it('Feed content has changed', function(done) {
-            var secondNewFeed = $('.feed').html();
-            expect(secondNewFeed).not.toEqual(firstNewFeed);
-            done();
-
-        })
-
-    })
 
 
 }());
