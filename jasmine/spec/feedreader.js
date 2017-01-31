@@ -26,7 +26,6 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
@@ -53,7 +52,7 @@ $(function() {
     });
 
     /* TODO: Write a new test suite named "The menu" */
-        describe('The Menu', function() {
+    describe('The Menu', function() {
         var hamburger = $('.menu-icon-link');
         var hideMenu = $('body').hasClass('menu-hidden');
 
@@ -83,6 +82,7 @@ $(function() {
 
     });
 
+
     /* TODO: Write a new test suite named "Initial Entries" */
 
     describe('Initial Entries', function() {
@@ -100,7 +100,7 @@ $(function() {
          */
 
         it('Within the feed container there is a minimum of 1 entry', function() {
-            var entryNum = $('.feed .entry').length;
+            var entryNum = $('.entry').length;
             expect(entryNum).toBeGreaterThan(0);
         })
 
@@ -112,17 +112,24 @@ $(function() {
 
         beforeEach(function(done) {
             firstNewFeed = $('.feed').html();
-            loadFeed(1, function() {
+            loadFeed(0, function() {
                 done();
             })
         })
-
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
 
+        it('Feed content has changed', function(done) {
+            var secondNewFeed = $('.feed').html();
+            expect(secondNewFeed).not.toEqual(firstNewFeed);
+            done();
+
+        })
+
+    })
 
 
 }());
