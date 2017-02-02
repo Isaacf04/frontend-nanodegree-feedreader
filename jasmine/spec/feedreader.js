@@ -65,8 +65,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
         var hamburger = $('.menu-icon-link');
-        var hiddenMenu = $('body').hasClass('menu=hidden');
-        it('The menu is hidden by default', function() {
+        var hiddenMenu = $('body').hasClass('menu-hidden');
+        it('is hidden by default', function() {
             expect(hiddenMenu).toBe(true);
         })
 
@@ -101,17 +101,41 @@ $(function() {
             loadFeed(0, done);
         })
 
-        it('Within the feed container there is a minimum of 1 entry', function() {
+        it('within the feed container there is a minimum of 1 entry', function() {
             var entryNum = $('.feed .entry').length;
             expect(entryNum).toBeGreaterThan(0);
         })
 
     })
 
-
-    /* TODO: Write a new test suite named "New Feed Selection"
-        /* TODO: Write a test that ensures when a new feed is loaded
+    /* Wrote a new test suite named "New Feed Selection"
+        /* Wrote a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+    describe('New feed Selection', function() {
+
+        var originalEntry;
+        var newEntry;
+
+        beforeEach(function(done) {
+        //We must have two different feeds;
+            loadFeed(1, function() {
+                originalEntry = $('.feed').text();
+                loadFeed(0, function() {
+                    newEntry = $('.feed').text();
+                    done();
+                    
+                })
+            })
+        })
+
+        //Here, we expect our content to change when new feeds load
+        it('changes when new feed loads', function() {
+            expect(newEntry).not.toBe(originalEntry);
+        })
+
+    })
+
 }());
