@@ -97,6 +97,7 @@ $(function() {
 
         beforeEach(function(done) {
             loadFeed(0, done);
+
         });
 
         it('within the feed container there is a minimum of 1 entry', function() {
@@ -120,9 +121,10 @@ $(function() {
         beforeEach(function(done) {
             //We must have two different feeds;
             loadFeed(1, function() {
-                originalEntry = $('.feed').text();
+                originalEntry = $('.feed').html();
                 loadFeed(0, function() {
-                    newEntry = $('.feed').text();
+                    newEntry = $('.feed').html();
+                    console.log('New entry length: ' + newEntry.length);
                     done();
 
                 });
