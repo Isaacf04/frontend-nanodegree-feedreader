@@ -37,8 +37,8 @@ $(function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBe('');
-            })
-        })
+            });
+        });
 
         /* Wrote a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -49,8 +49,8 @@ $(function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBe('');
-            })
-        })
+            });
+        });
 
 
     });
@@ -68,7 +68,7 @@ $(function() {
         var hiddenMenu = $('body').hasClass('menu-hidden');
         it('is hidden by default', function() {
             expect(hiddenMenu).toBe(true);
-        })
+        });
 
          /* Wrote a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -82,9 +82,9 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBeFalsy();
             hamburger.click();
             expect($('body').hasClass('menu-hidden')).toBeTruthy();
-        })
+        });
 
-    })
+    });
 
     /* Wrote a new test suite named "Initial Entries" */
 
@@ -99,14 +99,14 @@ $(function() {
 
         beforeEach(function(done) {
             loadFeed(0, done);
-        })
+        });
 
         it('within the feed container there is a minimum of 1 entry', function() {
             var entryNum = $('.feed .entry').length;
             expect(entryNum).toBeGreaterThan(0);
-        })
+        });
 
-    })
+    });
 
     /* Wrote a new test suite named "New Feed Selection"
         /* Wrote a test that ensures when a new feed is loaded
@@ -127,15 +127,15 @@ $(function() {
                     newEntry = $('.feed').text();
                     done();
                     
-                })
-            })
-        })
+                });
+            });
+        });
 
         //Here, we expect our content to change when new feeds load
         it('changes when new feed loads', function() {
             expect(newEntry).not.toBe(originalEntry);
-        })
+        });
 
-    })
+    });
 
 }());
