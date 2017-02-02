@@ -122,6 +122,7 @@ $(function() {
             //We must have two different feeds;
             loadFeed(1, function() {
                 originalEntry = $('.feed').html();
+                console.log('Original entry length:' + originalEntry.length);
                 loadFeed(0, function() {
                     newEntry = $('.feed').html();
                     console.log('New entry length: ' + newEntry.length);
